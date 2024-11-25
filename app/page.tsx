@@ -1,5 +1,7 @@
 import AppLogo from '@/components/shared/app-logo';
 import { lusitana } from '@/components/shared/fonts';
+import { Button } from '@/components/ui/button';
+import { ArrowRightIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -16,10 +18,12 @@ export default function Home() {
           >
             <strong>Welcome to Next 15 Admin Dashboard</strong>
           </p>
-          <Link href="/login">
-            <span>Log in</span>
-            {/* <ArrowRighIcon className="w-6"/> */}
-          </Link>
+          <Button asChild className="w-1/2">
+            <Link href="/login">
+              <span>Log in</span>
+              <ArrowRightIcon className="w-6" />
+            </Link>
+          </Button>
         </div>
         <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
           <Image
