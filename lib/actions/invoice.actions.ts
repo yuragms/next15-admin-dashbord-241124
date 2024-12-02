@@ -1,5 +1,5 @@
 import db from '@/db/drizzle';
-import { customers241124, invoices241124 } from '@/db/schema';
+import { customers241124, invoices241124, revenue241124 } from '@/db/schema';
 import { count, sql } from 'drizzle-orm';
 import { formatCurrency } from '../utils';
 export async function fetchCardData() {
@@ -34,5 +34,15 @@ export async function fetchCardData() {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch card data.');
+  }
+}
+
+export async function fetchRevenue() {
+  try {
+    const data = await db.select().from(revenue241124);
+    return data;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the revenues.');
   }
 }
