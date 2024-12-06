@@ -1,9 +1,19 @@
 // {
 //   "extends": ["next/core-web-vitals", "next/typescript"]
 // }
+
+// {
+//   "extends": ["next/core-web-vitals", "next/typescript"],
+//   "parserOptions": {
+//     "project": "./tsconfig.json"
+//   }
+// }
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
   }
 }
